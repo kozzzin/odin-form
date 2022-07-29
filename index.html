@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" type="text/javascript"></script>
     <title>Document</title>
 </head>
 <body>
@@ -16,6 +17,9 @@
                     <span>Odin</span>
                 </div>
             </div>
+            <p id="copyright">
+                Photo by <a href="https://unsplash.com/@manufactured?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Manuel Will</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </p>
             <!-- <div id="div-pad">
 
             </div> -->
@@ -28,30 +32,35 @@
             </div>
             <form action="#">
                 <fieldset>
-                    <legend>Let's do this</legend>
+                    <span id="legend">
+                        <legend>Let's do this!</legend>
+                    </span>
                     <div>
                         <label for="name">First name</label>
-                        <input type="text" name="name" id="name" />
+                        <input type="text" name="name" id="name" autocomplete="given-name" />
                     </div>
                     <div>
                         <label for="surname">Last name</label>
-                        <input type="text" name="surname" id="surname" />
+                        <input type="text" name="surname" id="surname" autocomplete="name" />
                     </div>
                     <div>
-                        <label for="email">Email*</label>
-                        <input type="email" name="email" id="email" title="We require your email" required/>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" autocomplete="email" id="email" title="We require your email"/>
                     </div>
                     <div>
                         <label for="tel">Phone number</label>
-                        <input type="tel" name="tel" id="tel" />
+                        <input type="tel" autocomplete="tel" name="tel" id="tel" />
                     </div>
                     <div>
                         <label for="password">Password*</label>
-                        <input type="password" class="red-border" name="password" title="We require password" id="password" required/>
+                        <input type="password"name="password" title="We require password" id="password" autocomplete="new-password" required/>
                     </div>
                     <div>
                         <label for="confirm_pass">Confirm password*</label>
-                        <input type="password" class="red-border" name="confirm_pass" id="confirm_pass" required/>
+                        <input type="password" name="confirm_pass" id="confirm_pass" autocomplete="new-password" required/>
+                        <div class="error">
+                            <span>* Passwords do not match</span>
+                        </div>
                     </div>
                 </fieldset>
                 <button type="submit">Create Account</button>
@@ -66,5 +75,5 @@
 </html>
 
 
-<!-- Photo by <a href="https://unsplash.com/@manufactured?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Manuel Will</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-   -->
+
+  

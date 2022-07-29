@@ -1,10 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @font-face {
     font-family: "Norse-bold";
     src: url("../fonts/Norse-Bold.otf") format("opentype");
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 
 body {
     /* background: url('../img/sign-up-form.png'); */
@@ -18,6 +17,14 @@ body {
     justify-content: center;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+}
+
+a {
+    color: #245875;
+}
+
+#right-col a {
+    text-decoration: none;
 }
 
 #container {
@@ -34,13 +41,26 @@ body {
     background-position: bottom;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
+
+#copyright {
+    color: #ccc;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+#copyright > a {
+    color: #ccc;
+}
+
+
 
 #right-col {
     flex: 2 63%;
     display: flex;
     flex-direction: column;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(200,200,200,0.1);
 }
 
 .header {
@@ -94,22 +114,18 @@ body {
     line-height: 1.1;
 }
 
-/* form {
-    display: flex;
-} */
-
-
-
 form > fieldset {
     display: flex;
     flex-wrap: wrap;
+    min-width: 0;
     margin: 0;
     padding: 0;
     border: 0;
     background-color: #fff;
     box-shadow: 0 3px 3px rgba(0,0,0,0.3);
-    padding: 20px 50px 42px;
-    box-sizing: content-box;
+    padding: 0 50px 42px;
+    clip: auto;
+    /* box-sizing: content-box; */
 }
 
 fieldset > div:nth-child(odd) {
@@ -125,11 +141,20 @@ fieldset > div:nth-child(odd) {
     position: relative;
 } */
 
-legend {
+#legend {
+    flex: 0 100%;
+    margin-bottom: 40px;
+}
+
+#right-col form legend {
     float: left;
+    position: relative;
+    top:30px;
     width: 100%;
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 500;
+    -webkit-margin-top-collapse: separate;
+    color: rgba(0,0,0,0.7);
 }
 
 
@@ -152,10 +177,15 @@ input {
     font-size: 0.8rem;
 }
 
+input {
+    font-size: 1rem;
+}
+
 label {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
+    color: rgba(0,0,0,0.6)
 }
 
 input {
@@ -163,6 +193,7 @@ input {
     border-radius: 3px;
     height: 1.8rem;
     padding: 0 10px;
+    box-sizing: border-box;
 }
 
 fieldset > div {
@@ -186,13 +217,75 @@ button {
     background-color: #245875;
     color: #fff;
     margin: 40px 0 15px 50px;
+    transition: all 0.4s;
+}
+
+button:hover {
+    filter: brightness(1.4);
 }
 
 input:focus-visible {
     outline: none !important;
     border: 1px solid lightblue;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 }
 
-.red-border {
-    border: 1px solid red;
+/* 
+input:valid {
+    background-color: green;
+} */
+
+input:invalid {
+    border-color: #ff0000;
+}
+
+.error {
+    content: 'Passwords do not match';
+    display: block;
+    color: #ff0000;
+    font-size: 0.7rem;
+    opacity: 0;
+}
+
+@media screen and (max-width:1080px) {
+
+    #container {
+        flex-direction: column;
+    }
+
+    #left-col {
+        flex: 0 100%;
+    }
+
+    #right-col > .header {
+        padding: 50px;
+        justify-content: flex-end;
+    }
+
+    #left-col > .header {
+        display: flex;
+        align-items: flex-end;
+        flex: 0 35%;
+    }
+
+
+
+}
+
+
+
+@media screen and (max-width:750px) {
+    fieldset > div {
+        flex: 0 100%;
+    }
+
+    #container {
+        height: auto;
+        overflow: auto;
+    }
+
+    fieldset > div:nth-child(odd) {
+        padding-left: 0;
+    }
+
 }
